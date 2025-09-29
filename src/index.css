@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NINJAS NKT - Cyberpunk Hacker Design System */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Cyberpunk Core Colors */
+    --background: 220 15% 8%;
+    --foreground: 180 100% 85%;
+    
+    /* Cards & Surfaces */
+    --card: 220 15% 12%;
+    --card-foreground: 180 100% 90%;
+    
+    /* Interactive Elements */
+    --popover: 220 15% 10%;
+    --popover-foreground: 180 100% 90%;
+    
+    /* Primary - Cyan Neon */
+    --primary: 180 100% 50%;
+    --primary-foreground: 220 15% 8%;
+    
+    /* Secondary - Deep Blue */
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 180 100% 85%;
+    
+    /* Muted Elements */
+    --muted: 220 15% 14%;
+    --muted-foreground: 180 30% 65%;
+    
+    /* Accent - Green Neon */
+    --accent: 120 100% 50%;
+    --accent-foreground: 220 15% 8%;
+    
+    /* Danger - Red Neon */
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 220 15% 8%;
+    
+    /* Borders & Inputs */
+    --border: 180 50% 25%;
+    --input: 220 15% 15%;
+    --ring: 180 100% 50%;
+    
+    /* Sidebar */
+    --sidebar-background: 220 15% 6%;
+    --sidebar-foreground: 180 100% 80%;
+    --sidebar-primary: 180 100% 50%;
+    --sidebar-primary-foreground: 220 15% 6%;
+    --sidebar-accent: 220 15% 12%;
+    --sidebar-accent-foreground: 180 100% 85%;
+    --sidebar-border: 180 50% 20%;
+    --sidebar-ring: 180 100% 50%;
+    
+    /* Custom Cyberpunk Variables */
+    --neon-cyan: 180 100% 50%;
+    --neon-green: 120 100% 50%;
+    --neon-purple: 280 100% 70%;
+    --neon-pink: 320 100% 60%;
+    --neon-orange: 30 100% 60%;
+    
+    /* Gradients */
+    --gradient-cyber: linear-gradient(135deg, hsl(var(--neon-cyan)) 0%, hsl(var(--neon-purple)) 100%);
+    --gradient-terminal: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(220 15% 6%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(220 15% 12%) 0%, hsl(220 15% 8%) 100%);
+    
+    /* Shadows */
+    --shadow-neon: 0 0 20px hsl(var(--neon-cyan) / 0.5);
+    --shadow-cyber: 0 8px 32px hsl(var(--neon-cyan) / 0.15);
+    --shadow-card: 0 4px 16px hsl(220 15% 4% / 0.5);
+    
+    /* Animations */
+    --transition-cyber: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --border-radius: 8px;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono;
+  }
+}
+
+@layer utilities {
+  .cyber-border {
+    border: 1px solid hsl(var(--border));
+    box-shadow: 0 0 10px hsl(var(--neon-cyan) / 0.3);
+  }
+  
+  .cyber-glow {
+    box-shadow: var(--shadow-neon);
+  }
+  
+  .cyber-card {
+    background: var(--gradient-card);
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-card);
+  }
+  
+  .terminal-bg {
+    background: var(--gradient-terminal);
+  }
+  
+  .neon-text {
+    text-shadow: 0 0 5px currentColor;
+  }
+  
+  .cyber-button {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--neon-purple)) 100%);
+    border: 1px solid hsl(var(--primary));
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.3);
+    transition: var(--transition-cyber);
+  }
+  
+  .cyber-button:hover {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+    transform: translateY(-1px);
+  }
+  
+  .investigator-card {
+    background: var(--gradient-card);
+    border: 2px solid hsl(var(--border));
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-cyber);
+  }
+  
+  .investigator-card:hover {
+    border-color: hsl(var(--primary));
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+    transform: translateY(-2px);
+  }
+}
